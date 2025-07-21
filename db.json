@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": "cf84",
+      "title": "Fix The UI",
+      "completed": false
+    },
+    {
+      "id": "ac33",
+      "title": "Use TailWind",
+      "completed": false
+    },
+    {
+      "id": "e4f3",
+      "title": "Drink water",
+      "completed": false
+    }
+  ]
+}
