@@ -43,14 +43,12 @@ export function ListDashboard({ onSelectList }: ListDashboardProps) {
             <div
               key={list.id}
               className="list-card"
-              onClick={() => onSelectList(list.id, list.name)} // <--- Call onSelectList here
+              onClick={() => onSelectList(list.id, list.name)}
             >
               <h3 className="list-card-title">{list.name}</h3>
-              {/* You can optionally add a counter for tasks here later */}
               <button className="list-card-button">View List</button>
             </div>
           ))}
-          {/* Optional: Add a card for adding a new list */}
           <div
             className="list-card add-new-card"
             onClick={() => alert("Add New List functionality coming soon!")}

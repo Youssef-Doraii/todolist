@@ -1,6 +1,7 @@
 :root{
     /* Colors */
     --primary: #f48c06;
+    --primary-dark: #E65100;
     --background: #f9f9f9;
     --card-background: #ffffff;
     --text-dark: #333333;
@@ -8,6 +9,7 @@
     --text-light: #999999;
     --border: #e0e0e0;
     --danger: #dc3545;
+    --shadow: rgba(0, 0, 0, 0.15);
 
     /* Spacing */
   --spacing-xs: 8px;
