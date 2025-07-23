@@ -1,19 +1,18 @@
 {
   "todos": [
-    {
-      "id": "cf84",
-      "title": "Fix The UI",
-      "completed": false
-    },
-    {
-      "id": "ac33",
-      "title": "Use TailWind",
-      "completed": false
-    },
-    {
-      "id": "e4f3",
-      "title": "Drink water",
-      "completed": false
-    }
+    { "id": 1, "title": "Buy groceries", "completed": false, "listId": 3 },
+    { "id": 2, "title": "Go for a run", "completed": true, "listId": 1 },
+    { "id": 3, "title": "Finish React project", "completed": false, "listId": 2 },
+    { "id": 4, "title": "Call Sarah", "completed": false, "listId": 4 },
+    { "id": 5, "title": "Review presentation", "completed": true, "listId": 5 },
+    { "id": 6, "title": "Meal prep for week", "completed": false, "listId": 3 },
+    { "id": 7, "title": "Read 20 pages", "completed": false, "listId": 2 }
+  ],
+  "todoLists": [
+    { "id": 1, "name": "Health" },
+    { "id": 2, "name": "Education" },
+    { "id": 3, "name": "Food" },
+    { "id": 4, "name": "Lifestyle" },
+    { "id": 5, "name": "Group Work" }
   ]
 }

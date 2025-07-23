@@ -1,28 +1,64 @@
-//Fetches todos.
+// src/api/todos.ts
+
 import axios from "axios";
-import type { ToDo } from "../types/todo";
+import type { ToDo, TodoListCategory } from "../types";
+
 const BASE_URL = "http://localhost:3001";
-
-export async function getTodos(): Promise<ToDo[]> {
-  const response = await axios.get<ToDo[]>(`${BASE_URL}/todos`);
+// Fetches todos for a specific listId
+export async function getTodos(listId: number): Promise<ToDo[]> {
+  const response = await axios.get<ToDo[]>(`${BASE_URL}/todos`, {
+    params: { listId: listId }, // Filter by listId
+  });
   return response.data;
 }
 
-//Adds a new todo to your list or backend (if connected).
-export async function addTodo(newTodo: Omit<ToDo, "id">): Promise<ToDo> {
-  const response = await axios.post(`${BASE_URL}/todos`, newTodo);
+// Adds a new todo to a specific list
+export async function addTodo(title: string, listId: number): Promise<ToDo> {
+  const newTodo = { title, completed: false, listId };
+  const response = await axios.post<ToDo>(`${BASE_URL}/todos`, newTodo);
   return response.data;
 }
 
-//edits a todo
+// Edits an existing todo
 export async function updateTodo(todo: ToDo): Promise<ToDo> {
-  const response = await axios.put(`${BASE_URL}/todos/${todo.id}`, todo);
+  const response = await axios.put<ToDo>(`${BASE_URL}/todos/${todo.id}`, todo);
   return response.data;
 }
 
-//Deletes one or multiple todos.
-export async function deleteTodo(id: number) {
-  // Sends DELETE request to your backend to remove the todo with given id
+// Deletes a todo
+export async function deleteTodo(id: number): Promise<void> {
   await axios.delete(`${BASE_URL}/todos/${id}`);
-  // No need to return data since JSON Server returns empty response on delete
+}
+
+// Fetches all todo lists/categories
+export async function getTodoLists(): Promise<TodoListCategory[]> {
+  const response = await axios.get<TodoListCategory[]>(`${BASE_URL}/todoLists`);
+  return response.data;
+}
+
+// Adds a new todo list/category
+export async function addTodoList(name: string): Promise<TodoListCategory> {
+  const newList = { name };
+  const response = await axios.post<TodoListCategory>(
+    `${BASE_URL}/todoLists`,
+    newList
+  );
+  return response.data;
+}
+
+// Edits an existing todo list/category
+export async function updateTodoList(
+  updatedList: TodoListCategory
+): Promise<TodoListCategory> {
+  const response = await axios.put<TodoListCategory>(
+    `${BASE_URL}/todoLists/${updatedList.id}`,
+    updatedList
+  );
+  return response.data;
+}
+
+// Deletes a todo list/category and associated todos
+export async function deleteTodoList(id: number): Promise<void> {
+  // First, delete the list itself
+  await axios.delete(`${BASE_URL}/todoLists/${id}`);
 }

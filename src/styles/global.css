@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body{
+    font-family: var(--font-family);
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: color-mix(in srgb, var(--primary) 80%, black);
+}

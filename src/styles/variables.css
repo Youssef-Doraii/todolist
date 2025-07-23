@@ -1,0 +1,27 @@
+:root{
+    /* Colors */
+    --primary: #f48c06;
+    --background: #f9f9f9;
+    --card-background: #ffffff;
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --text-light: #999999;
+    --border: #e0e0e0;
+    --danger: #dc3545;
+
+    /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+    /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Fonts */
+  --font-family: 'Poppins', sans-serif;
+}
