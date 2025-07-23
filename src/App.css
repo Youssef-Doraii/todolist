@@ -5,16 +5,7 @@ html, body, #root {
   height: 100%;
   box-sizing: border-box;
 }
-
-.app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: var(--background);
-  padding: var(--spacing-md);
-  width: 100%;
-}
+/* ... (existing html, body, #root, app-container, app-header, app-title, app-date styles) ... */
 
 .main-card {
   background-color: var(--card-background);
@@ -24,17 +15,65 @@ html, body, #root {
   width: 90%;
   max-width: 800px;
   min-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
+  margin: 0;
 }
 
-.main-title {
+.list-detail-header { /* Container for back button and action buttons */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--spacing-lg); /* Space below this header */
+}
+
+.list-actions { /* Container for action buttons on Page 2 */
+    display: flex;
+    gap: var(--spacing-sm); /* Space between buttons */
+}
+
+/* Changed from .edit-list-button */
+.create-list-button {
+    background-color: var(--primary); /* Use primary color */
+    color: white;
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.create-list-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Removed .add-list-button as it's not in the design */
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--text-medium);
+  cursor: pointer;
+  font-size: 1em;
+  padding: var(--spacing-xs) 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease-in-out;
+}
+
+.back-button:hover {
+  color: var(--primary);
+}
+
+.main-title { /* This is now specifically for the Page 2 list title (e.g., "Food") */
   font-size: 2.5em;
   font-weight: 700;
   color: var(--text-dark);
-  text-align: center;
+  text-align: left; /* Align to left for Page 2 */
   margin-bottom: var(--spacing-lg);
   font-family: var(--font-family);
+  width: 100%; /* Ensure it takes full width */
 }
+
+/* ... (your other existing styles) ... */

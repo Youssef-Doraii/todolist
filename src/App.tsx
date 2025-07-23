@@ -1,49 +1,66 @@
 // src/App.tsx
-import React, { useState } from "react"; // Import useState
+import React, { useState } from "react";
 import { ListDashboard } from "./components/lists/ListDashboard";
-import { AddTodo } from "./todos/AddTodo";
-import { TodoList } from "./todos/TodoList";
+// import { AddTodo } from "./components/todos/AddTodo"; // <--- REMOVE THIS IMPORT
+import { TodoList } from "./components/todos/TodoList";
 
 import "./App.css";
 
 function App() {
-  // State to manage the currently selected list ID
-  // null means no specific list is selected, show the dashboard
   const [selectedListId, setSelectedListId] = useState<number | null>(null);
-  const [selectedListName, setSelectedListName] = useState<string | null>(null); // To display list name
+  const [selectedListName, setSelectedListName] = useState<string | null>(null);
 
-  // Function to navigate to a specific list
   const handleSelectList = (id: number, name: string) => {
     setSelectedListId(id);
     setSelectedListName(name);
   };
 
-  // Function to go back to the dashboard
   const handleGoBack = () => {
     setSelectedListId(null);
     setSelectedListName(null);
   };
 
+  const getCurrentDate = () => {
+    const options: Intl.DateTimeFormatOptions = {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    };
+    return new Date().toLocaleDateString("en-US", options);
+  };
+
   return (
     <div className="app-container">
+      <div className="app-header">
+        <h1 className="app-title">Todo List</h1>
+        <p className="app-date">{getCurrentDate()}</p>
+      </div>
+
       <div className="main-card">
         {selectedListId ? (
-          // If a list is selected, show the specific list view ("Page 2")
           <React.Fragment>
-            <button onClick={handleGoBack} className="back-button">
-              ← Back to {selectedListName ? selectedListName : "Lists"}
-            </button>
-            <h2 className="main-title">{selectedListName} Ingredients</h2>{" "}
-            {/* Updated title */}
-            <AddTodo listId={selectedListId} />
+            <div className="list-detail-header">
+              <button onClick={handleGoBack} className="back-button">
+                ← Go Back
+              </button>
+              <div className="list-actions">
+                <button
+                  className="create-list-button"
+                  onClick={() => alert("Create List clicked!")}
+                >
+                  Create List
+                </button>{" "}
+                {/* Changed to Create List */}
+              </div>
+            </div>
+            <h2 className="main-title">{selectedListName}</h2>{" "}
+            {/* Changed to just list name */}
+            {/* REMOVE THIS LINE: <AddTodo listId={selectedListId} defaultSection={selectedListName + " Ingredients"} /> */}
             <TodoList listId={selectedListId} />
           </React.Fragment>
         ) : (
-          // If no list is selected, show the dashboard ("Page 1")
           <React.Fragment>
-            <h2 className="main-title">My Lists</h2>
-            <ListDashboard onSelectList={handleSelectList} />{" "}
-            {/* Pass the selection handler */}
+            <ListDashboard onSelectList={handleSelectList} />
           </React.Fragment>
         )}
       </div>

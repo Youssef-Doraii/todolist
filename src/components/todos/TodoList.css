@@ -1,0 +1,141 @@
+/* src/components/todos/TodoList.css */
+
+.todo-list-sections-container {
+  margin-top: var(--spacing-lg);
+  width: 100%; /* Ensure container takes full width of its parent */
+}
+
+.todo-sections-grid { /* NEW: Grid for arranging multiple section cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjust min-width as needed */
+  gap: var(--spacing-lg); /* Space between section cards */
+}
+
+.todo-section-card { /* Each section is now a card */
+  background-color: var(--card-background);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px var(--shadow); /* Use your shadow variable */
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 200px; /* Adjust min-height for consistent card size */
+}
+
+.todo-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out title and progress */
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border); /* Separator line */
+  padding-bottom: var(--spacing-sm);
+}
+
+.section-checkbox { /* Checkbox next to section title */
+  margin-right: var(--spacing-sm);
+  /* Basic styling, can be customized */
+}
+
+.todo-section-title {
+  font-size: 1.2em; /* Smaller title for sections within the page */
+  font-weight: 600;
+  color: var(--text-dark);
+  flex-grow: 1; /* Allow title to take space */
+  margin: 0; /* Reset default margins */
+}
+
+.todo-section-progress {
+  font-size: 0.9em;
+  color: var(--text-medium);
+  flex-shrink: 0; /* Prevent progress text from shrinking */
+}
+
+.todo-items-list {
+  list-style: none; /* Remove default list bullets */
+  padding: 0;
+  margin: var(--spacing-sm) 0; /* Add some margin around the list */
+  width: 100%;
+  flex-grow: 1; /* Allow list to grow and push button down */
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px dashed var(--border-light); /* Dashed separator for items */
+}
+
+.todo-item:last-child {
+  border-bottom: none; /* No border for the last item in a section */
+}
+
+.todo-item-left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allow it to take available space */
+}
+
+.todo-item-dot { /* The colored dot */
+  width: 8px; /* Slightly smaller dot */
+  height: 8px;
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.todo-item-title {
+  font-size: 0.95em; /* Slightly smaller font for items */
+  color: var(--text-dark);
+  flex-grow: 1;
+}
+
+.todo-item-title.completed {
+  text-decoration: line-through;
+  color: var(--text-medium);
+}
+
+.todo-item-delete-btn { /* The 'X' button */
+  background: none;
+  border: none;
+  color: var(--text-medium);
+  font-size: 1em; /* Smaller 'X' */
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-xs);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.todo-item-delete-btn:hover {
+  color: var(--error); /* Red color for delete on hover */
+  background-color: var(--background-light);
+}
+
+.add-item-button {
+  background-color: transparent;
+  border: 1px dashed var(--border);
+  color: var(--text-medium);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  margin-top: var(--spacing-md);
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+.add-item-button:hover {
+  background-color: var(--background-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.no-todos-message {
+  text-align: center;
+  color: var(--text-medium);
+  font-size: 1.1em;
+  padding: var(--spacing-lg);
+}

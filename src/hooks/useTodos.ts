@@ -1,7 +1,12 @@
 // src/hooks/useTodos.ts
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getTodos, addTodo, updateTodo, deleteTodo } from "../api/todos";
-import type { ToDo } from "../types"; // Keep 'type' keyword due to verbatimModuleSyntax
+import {
+  getTodos,
+  addTodo as apiAddTodo,
+  updateTodo,
+  deleteTodo,
+} from "../api/todos";
+import type { ToDo } from "../types";
 
 export function useTodos(listId: number) {
   const queryClient = useQueryClient();
@@ -12,10 +17,19 @@ export function useTodos(listId: number) {
     enabled: !!listId,
   });
 
-  const addTodoMutation = useMutation({
-    mutationFn: (title: string) => addTodo(title, listId),
+  // Define a type for the payload that addTodoMutation expects
+  type AddTodoPayload = { title: string; section?: string };
+
+  // Explicitly define the generic types for useMutation:
+  // <SuccessData, Error, Variables (the payload type), Context (optional)>
+  const addTodoMutation = useMutation<ToDo, Error, AddTodoPayload>({
+    // FIX IS HERE: The mutationFn receives the 'payload' object.
+    // We then pass payload.title, listId (from hook scope), and payload.section
+    mutationFn: (payload: AddTodoPayload) =>
+      apiAddTodo(payload.title, listId, payload.section), // <--- CORRECTED LINE
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todos", listId] });
+      queryClient.invalidateQueries({ queryKey: ["allTodos"] });
     },
   });
 
@@ -27,18 +41,17 @@ export function useTodos(listId: number) {
           todo.id === updatedTodo.id ? updatedTodo : todo
         );
       });
+      queryClient.invalidateQueries({ queryKey: ["allTodos"] });
     },
   });
 
   const deleteTodoMutation = useMutation({
-    // mutationFn receives the ID of the todo to delete
     mutationFn: deleteTodo,
-    // onSuccess now correctly receives the variables (the id) as the second argument
     onSuccess: (_, deletedId) => {
-      // <--- FIX IS HERE: Add '_' for result and 'deletedId' for variables
       queryClient.setQueryData<ToDo[]>(["todos", listId], (oldTodos) =>
         oldTodos?.filter((todo) => todo.id !== deletedId)
       );
+      queryClient.invalidateQueries({ queryKey: ["allTodos"] });
     },
   });
 

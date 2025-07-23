@@ -1,18 +1,131 @@
 {
   "todos": [
-    { "id": 1, "title": "Buy groceries", "completed": false, "listId": 3 },
-    { "id": 2, "title": "Go for a run", "completed": true, "listId": 1 },
-    { "id": 3, "title": "Finish React project", "completed": false, "listId": 2 },
-    { "id": 4, "title": "Call Sarah", "completed": false, "listId": 4 },
-    { "id": 5, "title": "Review presentation", "completed": true, "listId": 5 },
-    { "id": 6, "title": "Meal prep for week", "completed": false, "listId": 3 },
-    { "id": 7, "title": "Read 20 pages", "completed": false, "listId": 2 }
+    {
+      "id": "1",
+      "title": "Buy tomato half plastic",
+      "completed": false,
+      "listId": 3,
+      "section": "Food Ingredients"
+    },
+    {
+      "id": "2",
+      "title": "Boil meat and other protein",
+      "completed": false,
+      "listId": 3,
+      "section": "Meat Ingredients"
+    },
+    {
+      "id": "3",
+      "title": "Buy potatoes one sack",
+      "completed": false,
+      "listId": 3,
+      "section": "Food Ingredients"
+    },
+    {
+      "id": "9",
+      "title": "Flour 1kg",
+      "completed": false,
+      "listId": 3,
+      "section": "Cakes Ingredients"
+    },
+    {
+      "id": "10",
+      "title": "Sugar 500g",
+      "completed": false,
+      "listId": 3,
+      "section": "Cakes Ingredients"
+    },
+    {
+      "id": "12",
+      "title": "Chicken breast",
+      "completed": false,
+      "listId": 3,
+      "section": "Meat Ingredients"
+    },
+    {
+      "id": "18",
+      "title": "Get Turmeric",
+      "completed": false,
+      "listId": 3,
+      "section": "Spices Needed"
+    },
+    {
+      "id": "19",
+      "title": "Ginger Powder",
+      "completed": false,
+      "listId": 3,
+      "section": "Spices Needed"
+    },
+    {
+      "id": "20",
+      "title": "Garlic",
+      "completed": false,
+      "listId": 3,
+      "section": "Spices Needed"
+    },
+    {
+      "id": "21",
+      "title": "Buy onions",
+      "completed": false,
+      "listId": 3,
+      "section": "Shopping List"
+    },
+    {
+      "id": "22",
+      "title": "Fry meat",
+      "completed": false,
+      "listId": 3,
+      "section": "Shopping List"
+    },
+    {
+      "id": "23",
+      "title": "Bleach palm oil",
+      "completed": false,
+      "listId": 3,
+      "section": "Shopping List"
+    },
+    {
+      "id": "14",
+      "title": "Go for a run",
+      "completed": false,
+      "listId": 1,
+      "section": "Daily Routine"
+    },
+    {
+      "id": "15",
+      "title": "Drink 2L water",
+      "completed": true,
+      "listId": 1,
+      "section": "Daily Routine"
+    },
+    {
+      "id": "16",
+      "title": "Read a book",
+      "completed": false,
+      "listId": 2,
+      "section": "Learning"
+    }
   ],
   "todoLists": [
-    { "id": 1, "name": "Health" },
-    { "id": 2, "name": "Education" },
-    { "id": 3, "name": "Food" },
-    { "id": 4, "name": "Lifestyle" },
-    { "id": 5, "name": "Group Work" }
+    {
+      "id": "1",
+      "name": "Health"
+    },
+    {
+      "id": "2",
+      "name": "Education"
+    },
+    {
+      "id": "3",
+      "name": "Food"
+    },
+    {
+      "id": "4",
+      "name": "Lifestyle"
+    },
+    {
+      "id": "5",
+      "name": "Group Work"
+    }
   ]
 }

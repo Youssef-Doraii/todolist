@@ -5,6 +5,7 @@ export interface ToDo {
   title: string;
   completed: boolean;
   listId: number;
+  section?: string;
 }
 
 export interface TodoListCategory {

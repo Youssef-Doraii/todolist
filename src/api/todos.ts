@@ -4,17 +4,25 @@ import axios from "axios";
 import type { ToDo, TodoListCategory } from "../types";
 
 const BASE_URL = "http://localhost:3001";
+
+// --- API Functions for Todos (using Axios) ---
+
 // Fetches todos for a specific listId
 export async function getTodos(listId: number): Promise<ToDo[]> {
   const response = await axios.get<ToDo[]>(`${BASE_URL}/todos`, {
-    params: { listId: listId }, // Filter by listId
+    params: { listId: listId },
   });
   return response.data;
 }
 
-// Adds a new todo to a specific list
-export async function addTodo(title: string, listId: number): Promise<ToDo> {
-  const newTodo = { title, completed: false, listId };
+// THIS IS THE CRITICAL FUNCTION: Ensure it has 'section?: string'
+export async function addTodo(
+  title: string,
+  listId: number,
+  section?: string
+): Promise<ToDo> {
+  // <--- THIS LINE IS KEY
+  const newTodo = { title, completed: false, listId, section };
   const response = await axios.post<ToDo>(`${BASE_URL}/todos`, newTodo);
   return response.data;
 }
@@ -29,6 +37,14 @@ export async function updateTodo(todo: ToDo): Promise<ToDo> {
 export async function deleteTodo(id: number): Promise<void> {
   await axios.delete(`${BASE_URL}/todos/${id}`);
 }
+
+// Function to get ALL todos (for dashboard counts)
+export async function getAllTodos(): Promise<ToDo[]> {
+  const response = await axios.get<ToDo[]>(`${BASE_URL}/todos`);
+  return response.data;
+}
+
+// --- API Functions for TodoListCategory (using Axios) ---
 
 // Fetches all todo lists/categories
 export async function getTodoLists(): Promise<TodoListCategory[]> {
@@ -59,6 +75,5 @@ export async function updateTodoList(
 
 // Deletes a todo list/category and associated todos
 export async function deleteTodoList(id: number): Promise<void> {
-  // First, delete the list itself
   await axios.delete(`${BASE_URL}/todoLists/${id}`);
 }
