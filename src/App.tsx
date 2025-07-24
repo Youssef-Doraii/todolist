@@ -31,6 +31,7 @@ function App() {
 
   return (
     <div className="app-container">
+      {/* RESTORED: The app-header div with title and date */}
       <div className="app-header">
         <h1 className="app-title">Todo List</h1>
         <p className="app-date">{getCurrentDate()}</p>

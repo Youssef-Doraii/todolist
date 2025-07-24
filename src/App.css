@@ -1,39 +1,36 @@
-html, body, #root { 
+html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-/* ... (existing html, body, #root, app-container, app-header, app-title, app-date styles) ... */
 
 .main-card {
-  background-color: var(--card-background);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  width: 90%;
-  max-width: 800px;
-  min-width: 300px;
-  margin: 0;
+  background-color: transparent;
+  padding: var(--spacing-md);
+  width: 100%;
+  /* RE-APPLYING FOR LAPTOP LAYOUT: Max-width to contain content and margin to center it */
+  max-width: 1200px; /* This value can be adjusted if you prefer a wider/narrower overall content area */
+  min-width: auto;
+  margin: 0 auto;   /* Centers the main content area horizontally on larger screens */
 }
 
-.list-detail-header { /* Container for back button and action buttons */
+.list-detail-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: var(--spacing-lg); /* Space below this header */
+    margin-bottom: var(--spacing-lg);
 }
 
-.list-actions { /* Container for action buttons on Page 2 */
+.list-actions {
     display: flex;
-    gap: var(--spacing-sm); /* Space between buttons */
+    gap: var(--spacing-sm);
 }
 
-/* Changed from .edit-list-button */
 .create-list-button {
-    background-color: var(--primary); /* Use primary color */
+    background-color: var(--primary);
     color: white;
     border: none;
     padding: var(--spacing-xs) var(--spacing-md);
@@ -46,8 +43,6 @@ html, body, #root {
 .create-list-button:hover {
     background-color: var(--primary-dark);
 }
-
-/* Removed .add-list-button as it's not in the design */
 
 .back-button {
   background: none;
@@ -66,14 +61,47 @@ html, body, #root {
   color: var(--primary);
 }
 
-.main-title { /* This is now specifically for the Page 2 list title (e.g., "Food") */
+.main-title {
   font-size: 2.5em;
   font-weight: 700;
-  color: var(--text-dark);
-  text-align: left; /* Align to left for Page 2 */
+  color: var(--text-dark); /* User specified this color */
+  text-align: left;
   margin-bottom: var(--spacing-lg);
   font-family: var(--font-family);
-  width: 100%; /* Ensure it takes full width */
+  width: 100%;
 }
 
-/* ... (your other existing styles) ... */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text-dark);
+  font-family: var(--font-family-primary);
+  line-height: 1.6;
+}
+
+.app-header {
+  background-color: var(--header-background);
+  /* color: white; <-- Removed as user set specific colors */
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  flex-direction: column; /* To stack title and date */
+  align-items: flex-start; /* To align title and date to the left */
+  justify-content: center;
+  box-shadow: 0 2px 4px var(--shadow);
+  border-radius: var(--radius-md);
+}
+
+.app-title {
+  font-size: 1.8em;
+  margin: 0;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-dark); /* User specified this color */
+}
+
+.app-date {
+  font-size: 1em;
+  color: var(--text-dark); /* User specified this color */
+  opacity: 0.8;
+}

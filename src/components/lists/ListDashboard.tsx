@@ -3,7 +3,6 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getTodoLists } from "../../api/todos";
 import type { TodoListCategory } from "../../types";
-
 import "./ListDashboard.css";
 
 // Define the props that ListDashboard expects
@@ -12,7 +11,6 @@ interface ListDashboardProps {
 }
 
 export function ListDashboard({ onSelectList }: ListDashboardProps) {
-  // <--- Receive onSelectList prop
   const {
     data: lists,
     isLoading,
@@ -22,7 +20,6 @@ export function ListDashboard({ onSelectList }: ListDashboardProps) {
     queryKey: ["todoLists"],
     queryFn: getTodoLists,
   });
-
   if (isLoading) {
     return <p>Loading your lists...</p>;
   }
@@ -45,15 +42,19 @@ export function ListDashboard({ onSelectList }: ListDashboardProps) {
               className="list-card"
               onClick={() => onSelectList(list.id, list.name)}
             >
+              <div className="list-card-icon-placeholder"></div>
               <h3 className="list-card-title">{list.name}</h3>
-              <button className="list-card-button">View List</button>
+              <p className="list-card-progress">X/Y Task Completed</p>
             </div>
           ))}
           <div
             className="list-card add-new-card"
             onClick={() => alert("Add New List functionality coming soon!")}
           >
-            <span className="add-new-icon">+</span>
+            {/* NEW: Wrap the '+' icon with a div for consistent styling */}
+            <div className="add-new-icon-placeholder">
+              <span className="add-new-icon">+</span>
+            </div>
             <h3 className="list-card-title">Add New</h3>
           </div>
         </div>

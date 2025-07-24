@@ -1,10 +1,12 @@
 .list-dashboard {
-  padding: var(--spacing-md);
+  padding: var(--spacing-md); /* Re-added padding */
 }
 
 .list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  /* Keeping the minmax(230px, 1fr) and media queries as these were part of the ongoing responsiveness discussion,
+     and only the padding removal was the "last" specific change for this file. */
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
 }
@@ -16,10 +18,13 @@
   padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  height: 180px;
+  /* width: 230px; remains removed, as discussed for responsiveness */
 }
 
 .list-card:hover {
@@ -27,29 +32,29 @@
   box-shadow: 0 8px 20px rgba(230, 81, 0, 0.4);
 }
 
+.list-card-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #fce4cc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
 .list-card-title {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
   color: var(--text-dark);
-  margin-bottom: var(--spacing-sm);
-  text-align: left;
+  margin-bottom: var(--spacing-xs);
   width: 100%;
 }
 
-.list-card-button {
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius-xs);
-  padding: var(--spacing-xs) var(--spacing-md);
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  margin-top: var(--spacing-md);
-  align-self: flex-end;
-}
-
-.list-card-button:hover {
-  background-color: var(--primary-dark);
+.list-card-progress {
+    font-size: 0.9em;
+    color: var(--text-medium);
+    margin-top: var(--spacing-xs);
 }
 
 .no-lists-message {
@@ -61,7 +66,7 @@
 
 .list-card.add-new-card {
   border: 1px dashed var(--border);
-  background-color: var(--background-light);
+  background-color: var(--primary);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,20 +77,50 @@
 }
 
 .list-card.add-new-card:hover {
-  background-color: var(--background);
-  border-color: var(--primary);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-3px);
+  background-color: var(--primary-dark);
+  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+.add-new-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
 }
 
 .add-new-icon {
-  font-size: 3em;
-  color: var(--text-medium);
-  line-height: 1;
-  margin-bottom: var(--spacing-sm);
+  font-size: 2em;
+  color: var(--primary);
+  line-height: 0.5;
 }
 
 .add-new-card .list-card-title {
-  color: var(--text-medium);
+  color: white;
   text-align: center;
+}
+
+/* --- Media Queries for larger screens (still present unless explicitly reverted) --- */
+
+@media screen and (min-width: 768px) {
+  .list-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .list-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .list-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
 }
