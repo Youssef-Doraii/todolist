@@ -4,11 +4,8 @@
 
 .list-grid {
   display: grid;
-  /* Keeping the minmax(230px, 1fr) and media queries as these were part of the ongoing responsiveness discussion,
-     and only the padding removal was the "last" specific change for this file. */
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
 }
 
 .list-card {
@@ -24,7 +21,6 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
   height: 180px;
-  /* width: 230px; remains removed, as discussed for responsiveness */
 }
 
 .list-card:hover {

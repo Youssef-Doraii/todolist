@@ -10,10 +10,8 @@ html, body, #root {
   background-color: transparent;
   padding: var(--spacing-md);
   width: 100%;
-  /* RE-APPLYING FOR LAPTOP LAYOUT: Max-width to contain content and margin to center it */
-  max-width: 1200px; /* This value can be adjusted if you prefer a wider/narrower overall content area */
+  max-width: auto;
   min-width: auto;
-  margin: 0 auto;   /* Centers the main content area horizontally on larger screens */
 }
 
 .list-detail-header {
@@ -82,15 +80,12 @@ html, body, #root {
 }
 
 .app-header {
-  background-color: var(--header-background);
-  /* color: white; <-- Removed as user set specific colors */
-  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: transparent;
+  padding: var(--spacing-md) var(--spacing-xl);
   display: flex;
-  flex-direction: column; /* To stack title and date */
-  align-items: flex-start; /* To align title and date to the left */
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  box-shadow: 0 2px 4px var(--shadow);
-  border-radius: var(--radius-md);
 }
 
 .app-title {
