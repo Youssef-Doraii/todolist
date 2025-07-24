@@ -1,5 +1,3 @@
-// src/components/lists/ListDashboard.tsx
-import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getTodoLists } from "../../api/todos";
 import type { TodoListCategory } from "../../types";
