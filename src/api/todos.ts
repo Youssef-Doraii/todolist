@@ -71,3 +71,17 @@ export async function updateTodoList(
 export async function deleteTodoList(id: number): Promise<void> {
   await axios.delete(`${BASE_URL}/todoLists/${id}`);
 }
+
+// Add a new section/sub-list to a list by creating a dummy todo with the section name
+export async function addSectionToList(listId: number, sectionName: string) {
+  // Create a dummy todo to represent the new section
+  const newTodo = {
+    title: "(Section Header)", // or leave blank, or use a special marker
+    completed: false,
+    listId,
+    section: sectionName,
+    isSectionHeader: true, // optional: helps you identify these in your UI
+  };
+  const response = await axios.post<ToDo>(`${BASE_URL}/todos`, newTodo);
+  return response.data;
+}
