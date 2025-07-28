@@ -88,7 +88,6 @@ button:hover,
   color: #fff;
 }
 
-/* Remove default button styles for consistency */
 button {
   border: none;
   background: none;
@@ -96,7 +95,6 @@ button {
   cursor: pointer;
 }
 
-/* Special style for delete buttons */
 .todo-item-delete-btn {
   background: transparent;
   color: var(--danger);
@@ -168,7 +166,6 @@ input[type="checkbox"]:hover {
   box-shadow: 0 0 4px var(--primary);
 }
 
-/* Make back-button, create-list-button, and list-actions buttons match filter-btn style */
 .back-button,
 .create-list-button,
 .list-actions button {
@@ -203,7 +200,6 @@ input[type="checkbox"]:hover {
   border-color: var(--primary-dark);
 }
 
-/* Support for dark mode */
 body.dark-mode {
   background-color: var(--background);
   color: var(--text-dark);

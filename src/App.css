@@ -62,7 +62,7 @@ html, body, #root {
 .main-title {
   font-size: 2.5em;
   font-weight: 700;
-  color: var(--text-dark); /* User specified this color */
+  color: var(--text-dark);
   text-align: left;
   margin-bottom: var(--spacing-lg);
   font-family: var(--font-family);
@@ -92,11 +92,11 @@ html, body, #root {
   font-size: 1.8em;
   margin: 0;
   margin-bottom: var(--spacing-xs);
-  color: var(--text-dark); /* User specified this color */
+  color: var(--text-dark);
 }
 
 .app-date {
   font-size: 1em;
-  color: var(--text-dark); /* User specified this color */
+  color: var(--text-dark);
   opacity: 0.8;
 }

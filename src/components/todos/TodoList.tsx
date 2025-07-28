@@ -81,7 +81,6 @@ export function TodoList({
           return (
             <div className="todo-section-card" key={section}>
               <div className="todo-section-header">
-                <input type="checkbox" disabled />
                 <span className="todo-section-title">{section}</span>
                 <span className="todo-section-progress">
                   {completedCount}/{groupedTodos[section].length} Completed
@@ -130,7 +129,7 @@ export function TodoList({
           );
         })}
       </div>
-      <div className="pagination-placeholder">Pagination Placeholder</div>
+      <div className="pagination-placeholder"></div>
     </div>
   );
 }

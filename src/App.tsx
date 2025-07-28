@@ -85,7 +85,6 @@ function App() {
           onClick={toggleDarkMode}
           title="Toggle dark mode"
         >
-          🌙
         </span>
       </div>
       <div className="main-card">

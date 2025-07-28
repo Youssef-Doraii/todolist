@@ -1,13 +1,6 @@
 {
   "todos": [
     {
-      "id": "2",
-      "title": "Boil meat and other protein",
-      "completed": false,
-      "listId": 3,
-      "section": "Meat Ingredients"
-    },
-    {
       "id": "3",
       "title": "Buy potatoes one sack",
       "completed": false,
@@ -24,7 +17,7 @@
     {
       "id": "12",
       "title": "Chicken breast",
-      "completed": false,
+      "completed": true,
       "listId": 3,
       "section": "Meat Ingredients"
     },
@@ -59,14 +52,14 @@
     {
       "id": "22",
       "title": "Fry meat",
-      "completed": false,
+      "completed": true,
       "listId": 3,
       "section": "Shopping List"
     },
     {
       "id": "23",
       "title": "Bleach palm oil",
-      "completed": false,
+      "completed": true,
       "listId": 3,
       "section": "Shopping List"
     },
@@ -92,20 +85,11 @@
       "section": "Learning"
     },
     {
-      "id": "4b48",
-      "title": "(Section Header)",
-      "completed": false,
+      "id": "3cb8",
+      "title": "Onions",
+      "completed": true,
       "listId": 3,
-      "section": "Testing",
-      "isSectionHeader": true
-    },
-    {
-      "id": "1aeb",
-      "title": "(Section Header)",
-      "completed": false,
-      "listId": 3,
-      "section": "Ge",
-      "isSectionHeader": true
+      "section": "Food Ingredients"
     }
   ],
   "todoLists": [
@@ -128,18 +112,6 @@
     {
       "id": "5",
       "name": "Group Work"
-    },
-    {
-      "id": "8a3a",
-      "name": "Hello"
-    },
-    {
-      "id": "da62",
-      "name": "aaaa"
-    },
-    {
-      "id": "4c4b",
-      "name": "as"
     }
   ]
 }

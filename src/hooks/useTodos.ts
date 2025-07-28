@@ -1,4 +1,3 @@
-// src/hooks/useTodos.ts
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   getTodos,
@@ -17,16 +16,11 @@ export function useTodos(listId: number) {
     enabled: !!listId,
   });
 
-  // Define a type for the payload that addTodoMutation expects
   type AddTodoPayload = { title: string; section?: string };
 
-  // Explicitly define the generic types for useMutation:
-  // <SuccessData, Error, Variables (the payload type), Context (optional)>
   const addTodoMutation = useMutation<ToDo, Error, AddTodoPayload>({
-    // FIX IS HERE: The mutationFn receives the 'payload' object.
-    // We then pass payload.title, listId (from hook scope), and payload.section
     mutationFn: (payload: AddTodoPayload) =>
-      apiAddTodo(payload.title, listId, payload.section), // <--- CORRECTED LINE
+      apiAddTodo(payload.title, listId, payload.section),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todos", listId] });
       queryClient.invalidateQueries({ queryKey: ["allTodos"] });
