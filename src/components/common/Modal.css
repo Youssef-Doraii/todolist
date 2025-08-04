@@ -1,29 +1,42 @@
 .modal-backdrop {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.25);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
+
 .modal-content {
   background: var(--card-background);
-  color: var(--text-dark);
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 32px var(--shadow);
+  border-radius: 20px;
   padding: 2rem;
-  min-width: 320px;
-  max-width: 90vw;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
   position: relative;
+  border: 1px solid var(--border);
 }
+
 .modal-close-btn {
   position: absolute;
-  top: 12px;
-  right: 16px;
-  background: none;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
   border: none;
-  font-size: 1.5em;
-  color: var(--text-light);
+  background: var(--surface-alt);
+  color: var(--text-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: all 0.2s ease;
 }

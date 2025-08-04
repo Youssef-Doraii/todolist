@@ -5,6 +5,7 @@ import { AddListForm } from "./components/lists/AddListForm";
 import { AddSubListForm } from "./components/lists/AddSubListForm";
 import { SectionDetailView } from "./components/todos/SectionDetailView";
 import { Modal } from "./components/common/Modal";
+import { DarkModeToggle } from "./components/common/DarkModeToggle";
 import "./App.css";
 
 function App() {
@@ -16,14 +17,16 @@ function App() {
   const [selectedSectionName, setSelectedSectionName] = useState<string | null>(
     null
   );
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    () => window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 
   // Modal state
   const [showAddCategory, setShowAddCategory] = useState(false);
   const [showAddSubList, setShowAddSubList] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", isDarkMode);
+    document.documentElement.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
 
   const toggleDarkMode = () => setIsDarkMode((d) => !d);
@@ -76,18 +79,28 @@ function App() {
 
   return (
     <div className="app-container">
-      {currentPage === "dashboard" && (
-        <div className="app-header">
-          <h1 className="app-title">Todo List</h1>
-          <p className="app-date">{getCurrentDate()}</p>
-          <span
-            className="moon-icon-placeholder"
-            style={{ marginLeft: "auto", cursor: "pointer" }}
-            onClick={toggleDarkMode}
-            title="Toggle dark mode"
-          ></span>
+      <div
+        className={`app-header ${
+          currentPage === "dashboard" ? "dashboard" : "detail"
+        }`}
+      >
+        <div className="header-content">
+          <div className="title-group">
+            {currentPage === "dashboard" && (
+              <>
+                <h1 className="app-title">Todo List</h1>
+                <p className="app-date">{getCurrentDate()}</p>
+              </>
+            )}
+          </div>
+          {currentPage === "dashboard" && (
+            <DarkModeToggle
+              isDark={isDarkMode}
+              onToggle={() => setIsDarkMode((prev) => !prev)}
+            />
+          )}
         </div>
-      )}
+      </div>
       <div className="main-card">
         {currentPage === "dashboard" && (
           <ListDashboard

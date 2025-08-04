@@ -28,28 +28,29 @@
 
 .todo-sections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
-  padding: 0 var(--spacing-md);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .todo-section-card {
-  background-color: var(--card-background);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 12px var(--shadow);
-  padding: var(--spacing-lg);
+  background: var(--card-background);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  min-height: 200px;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .todo-section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
   border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .section-checkbox {
@@ -57,11 +58,9 @@
 }
 
 .todo-section-title {
-  font-size: 1.2em;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-dark);
-  flex-grow: 1;
-  margin: 0;
 }
 
 .todo-section-progress {
@@ -73,17 +72,19 @@
 .todo-items-list {
   list-style: none;
   padding: 0;
-  margin: var(--spacing-sm) 0;
-  flex-grow: 1;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .todo-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0.75rem;
-  border-radius: var(--radius-md);
-  background-color: var(--background);
-  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background: var(--background);
   transition: all 0.2s ease;
 }
 

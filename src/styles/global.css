@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -12,6 +13,8 @@
 
 body {
   font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
   color: var(--text-dark);
   line-height: 1.6;
@@ -67,24 +70,34 @@ button:hover,
 }
 
 .filter-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-medium);
+  font-weight: 500;
+  transition: all 0.2s ease;
   margin-right: 10px;
   min-width: 90px;
 }
 
 .filter-btn.active {
   background: var(--primary);
-  color: #fff;
+  color: white;
   border-color: var(--primary-dark);
   box-shadow: 0 2px 8px var(--shadow);
 }
 
 .view-all-btn {
   width: 100%;
-  margin-top: 12px;
-  margin-bottom: 0;
-  font-size: 0.98em;
-  border-radius: var(--radius-xs);
-  box-shadow: none;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-medium);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: auto;
 }
 
 .view-all-btn:active {
@@ -106,6 +119,7 @@ button {
   width: 22px;
   height: 22px;
   font-size: 1.2em;
+  border-radius: 6px;
   line-height: 1;
   padding: 0;
   margin-left: 8px;
@@ -183,9 +197,14 @@ input[type="checkbox"]:hover {
 }
 
 .create-list-button {
-  background-color: var(--primary);
+  background: var(--primary);
   color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
   border: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 .create-list-button:hover {
@@ -194,13 +213,14 @@ input[type="checkbox"]:hover {
 }
 
 .back-button {
-  background: none;
-  border: none;
   color: var(--text-medium);
-  padding-left: 0;
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
 }
 
 .back-button:hover {
@@ -251,4 +271,63 @@ body.dark-mode {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.app-title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.list-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.section-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.task-count {
+  font-size: var(--font-size-sm);
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+/* Link and button text */
+a, button {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.text-medium {
+  color: var(--text-medium);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.todo-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem 0.75rem 1rem; /* Reduced right padding from 3rem to 1.5rem */
+  border-radius: 12px;
+  background: var(--background);
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
 }
