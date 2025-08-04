@@ -4,53 +4,99 @@
 
 .list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
 }
 
 .list-card {
-  background-color: var(--card-background);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 12px var(--shadow);
-  padding: var(--spacing-lg);
+  background: linear-gradient(145deg, var(--card-background), var(--card-background-alt));
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 1.25rem;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center;
-  height: 180px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.list-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .list-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 10px 20px -10px rgba(0, 0, 0, 0.1),
+    0 4px 8px -4px rgba(0, 0, 0, 0.06);
 }
 
-.list-card-icon-placeholder {
-    width: 50px;
-    height: 50px;
-    background-color: #fce4cc;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: var(--spacing-sm);
+.list-card:hover::before {
+  opacity: 1;
+}
+
+.list-card-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.list-card-icon svg {
+  width: 24px;
+  height: 24px;
+  color: white;
 }
 
 .list-card-title {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: var(--spacing-xs);
-  width: 100%;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .list-card-progress {
-    font-size: 0.9em;
-    color: var(--text-medium);
-    margin-top: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 6px;
+  background-color: var(--background);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .no-lists-message {

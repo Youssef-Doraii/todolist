@@ -37,22 +37,17 @@ export function TodoList({
   const sortedSections = Object.keys(groupedTodos).sort();
 
   return (
-    <div className="todo-list-sections-container">
-      <div
-        className="list-detail-header"
-        style={{ display: "flex", alignItems: "center", gap: 16 }}
-      >
-        <button className="back-button" onClick={onGoBack}>
-          ← Go Back
-        </button>
-        <h2 className="main-title" style={{ flex: 1 }}>
-          {listName}
-        </h2>
-        <div className="list-actions" style={{ display: "flex", gap: 8 }}>
-          <button className="create-list-button" onClick={onAddSubList}>
-            Add Sub List
+    <div>
+      <div className="list-detail-top-row">
+        <div className="list-detail-title-group">
+          <h2 className="list-title">{listName}</h2>
+          <button className="back-button" onClick={onGoBack}>
+            ← Go Back
           </button>
         </div>
+        <button className="create-list-button" onClick={onAddSubList}>
+          Add Sub List
+        </button>
       </div>
       <div style={{ display: "flex", gap: 12, marginBottom: 24 }}>
         <button

@@ -76,17 +76,18 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="app-header">
-        <h1 className="app-title">Todo List</h1>
-        <p className="app-date">{getCurrentDate()}</p>
-        <span
-          className="moon-icon-placeholder"
-          style={{ marginLeft: "auto", cursor: "pointer" }}
-          onClick={toggleDarkMode}
-          title="Toggle dark mode"
-        >
-        </span>
-      </div>
+      {currentPage === "dashboard" && (
+        <div className="app-header">
+          <h1 className="app-title">Todo List</h1>
+          <p className="app-date">{getCurrentDate()}</p>
+          <span
+            className="moon-icon-placeholder"
+            style={{ marginLeft: "auto", cursor: "pointer" }}
+            onClick={toggleDarkMode}
+            title="Toggle dark mode"
+          ></span>
+        </div>
+      )}
       <div className="main-card">
         {currentPage === "dashboard" && (
           <ListDashboard

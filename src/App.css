@@ -7,16 +7,21 @@ html, body, #root {
 }
 
 .main-card {
-  background-color: transparent;
-  padding: var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
   width: 100%;
-  max-width: auto;
-  min-width: auto;
+  margin-top: 1rem;
 }
 
 .list-detail-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Pushes actions to the right */
     align-items: center;
     width: 100%;
     margin-bottom: var(--spacing-lg);
@@ -75,28 +80,64 @@ html, body, #root {
   min-height: 100vh;
   background-color: var(--background);
   color: var(--text-dark);
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family);
   line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .app-header {
   background-color: transparent;
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: 1rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
 }
 
 .app-title {
-  font-size: 1.8em;
-  margin: 0;
-  margin-bottom: var(--spacing-xs);
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--text-dark);
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .app-date {
-  font-size: 1em;
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin-top: 0.5rem;
+}
+
+.list-title {
+  font-size: 2em;
+  font-weight: 700;
   color: var(--text-dark);
-  opacity: 0.8;
+  margin: var(--spacing-md) 0 var(--spacing-lg) 0;
+  padding: 0;
+  text-align: left;
+}
+
+.list-detail-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+}
+
+.list-detail-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.filter-row {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  align-items: center;
 }
