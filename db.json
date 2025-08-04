@@ -1,6 +1,111 @@
 {
   "todos": [
     {
+      "id": "14",
+      "title": "Go for a run",
+      "completed": false,
+      "listId": 1,
+      "section": "Daily Routine"
+    },
+    {
+      "id": "15",
+      "title": "Drink 2L water",
+      "completed": true,
+      "listId": 1,
+      "section": "Daily Routine"
+    },
+    {
+      "id": "24",
+      "title": "Meditate 10 minutes",
+      "completed": false,
+      "listId": 1,
+      "section": "Daily Routine"
+    },
+    {
+      "id": "25",
+      "title": "Dentist appointment",
+      "completed": false,
+      "listId": 1,
+      "section": "Appointments"
+    },
+    {
+      "id": "26",
+      "title": "Annual checkup",
+      "completed": true,
+      "listId": 1,
+      "section": "Appointments"
+    },
+    {
+      "id": "27",
+      "title": "10,000 steps",
+      "completed": false,
+      "listId": 1,
+      "section": "Fitness Goals"
+    },
+    {
+      "id": "28",
+      "title": "30 push-ups",
+      "completed": true,
+      "listId": 1,
+      "section": "Fitness Goals"
+    },
+    {
+      "id": "16",
+      "title": "Read a book",
+      "completed": false,
+      "listId": 2,
+      "section": "Learning"
+    },
+    {
+      "id": "29",
+      "title": "Finish JavaScript course",
+      "completed": false,
+      "listId": 2,
+      "section": "Courses"
+    },
+    {
+      "id": "30",
+      "title": "Start Python for Data Science",
+      "completed": true,
+      "listId": 2,
+      "section": "Courses"
+    },
+    {
+      "id": "31",
+      "title": "Write a blog post",
+      "completed": false,
+      "listId": 2,
+      "section": "Practice"
+    },
+    {
+      "id": "32",
+      "title": "Code 1 hour daily",
+      "completed": true,
+      "listId": 2,
+      "section": "Practice"
+    },
+    {
+      "id": "33",
+      "title": "Watch UI/UX webinar",
+      "completed": true,
+      "listId": 2,
+      "section": "Learning"
+    },
+    {
+      "id": "34",
+      "title": "Read 'Atomic Habits'",
+      "completed": false,
+      "listId": 2,
+      "section": "Reading List"
+    },
+    {
+      "id": "35",
+      "title": "Read 'Deep Work'",
+      "completed": true,
+      "listId": 2,
+      "section": "Reading List"
+    },
+    {
       "id": "3",
       "title": "Buy potatoes one sack",
       "completed": false,
@@ -8,8 +113,29 @@
       "section": "Food Ingredients"
     },
     {
+      "id": "3cb8",
+      "title": "Onions",
+      "completed": true,
+      "listId": 3,
+      "section": "Food Ingredients"
+    },
+    {
       "id": "9",
       "title": "Flour 1kg",
+      "completed": false,
+      "listId": 3,
+      "section": "Cakes Ingredients"
+    },
+    {
+      "id": "78a8",
+      "title": "Eggs",
+      "completed": false,
+      "listId": 3,
+      "section": "Cakes Ingredients"
+    },
+    {
+      "id": "b26b",
+      "title": "Vanilla extract",
       "completed": false,
       "listId": 3,
       "section": "Cakes Ingredients"
@@ -64,32 +190,102 @@
       "section": "Shopping List"
     },
     {
-      "id": "14",
-      "title": "Go for a run",
+      "id": "36",
+      "title": "Buy tomatoes",
       "completed": false,
-      "listId": 1,
-      "section": "Daily Routine"
+      "listId": 3,
+      "section": "Shopping List"
     },
     {
-      "id": "15",
-      "title": "Drink 2L water",
+      "id": "37",
+      "title": "Make lasagna",
       "completed": false,
-      "listId": 1,
-      "section": "Daily Routine"
+      "listId": 3,
+      "section": "Dinner Ideas"
     },
     {
-      "id": "16",
-      "title": "Read a book",
-      "completed": false,
-      "listId": 2,
-      "section": "Learning"
-    },
-    {
-      "id": "3cb8",
-      "title": "Onions",
+      "id": "38",
+      "title": "Try new curry recipe",
       "completed": true,
       "listId": 3,
-      "section": "Food Ingredients"
+      "section": "Dinner Ideas"
+    },
+    {
+      "id": "39",
+      "title": "Morning yoga",
+      "completed": true,
+      "listId": 4,
+      "section": "Wellness"
+    },
+    {
+      "id": "40",
+      "title": "Call mom",
+      "completed": false,
+      "listId": 4,
+      "section": "Daily Tasks"
+    },
+    {
+      "id": "41",
+      "title": "Read news",
+      "completed": false,
+      "listId": 4,
+      "section": "Daily Tasks"
+    },
+    {
+      "id": "42",
+      "title": "Plan weekend trip",
+      "completed": false,
+      "listId": 4,
+      "section": "Plans"
+    },
+    {
+      "id": "43",
+      "title": "Clean apartment",
+      "completed": true,
+      "listId": 4,
+      "section": "Chores"
+    },
+    {
+      "id": "44",
+      "title": "Prepare slides",
+      "completed": false,
+      "listId": 5,
+      "section": "Team Meeting"
+    },
+    {
+      "id": "45",
+      "title": "Send agenda",
+      "completed": true,
+      "listId": 5,
+      "section": "Team Meeting"
+    },
+    {
+      "id": "46",
+      "title": "Book meeting room",
+      "completed": false,
+      "listId": 5,
+      "section": "Team Meeting"
+    },
+    {
+      "id": "47",
+      "title": "Update homepage banner",
+      "completed": false,
+      "listId": 5,
+      "section": "Website Redesign"
+    },
+    {
+      "id": "48",
+      "title": "Fix mobile menu bug",
+      "completed": true,
+      "listId": 5,
+      "section": "Website Redesign"
+    },
+    {
+      "id": "49",
+      "title": "Review analytics",
+      "completed": false,
+      "listId": 5,
+      "section": "Website Redesign"
     }
   ],
   "todoLists": [
