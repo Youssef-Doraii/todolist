@@ -325,7 +325,7 @@ a, button {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.75rem 1.5rem 0.75rem 1rem; /* Reduced right padding from 3rem to 1.5rem */
+  padding: 0.75rem 1.5rem 0.75rem 1rem;
   border-radius: 12px;
   background: var(--background);
   margin-bottom: 0.5rem;

@@ -55,6 +55,3 @@ export function AddSubListForm({
     </div>
   );
 }
-
-// (Removed unrelated code that referenced undefined variables and types.)
-// If you need this logic, move it to a component/file where 'todos', 'section', and 'sectionName' are defined and properly typed.

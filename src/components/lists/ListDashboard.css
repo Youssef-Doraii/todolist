@@ -1,5 +1,6 @@
+/* === Layout Containers === */
 .list-dashboard {
-  padding: var(--spacing-md); /* Re-added padding */
+  padding: var(--spacing-md);
 }
 
 .list-grid {
@@ -9,18 +10,23 @@
   padding: 1rem 0;
 }
 
+
+/* === Base Card Styling === */
 .list-card {
   background: linear-gradient(145deg, var(--card-background), var(--card-background-alt));
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
+  box-shadow: 0 4px 24px rgba(60, 60, 60, 0.06);
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
   position: relative;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .list-card::before {
@@ -36,16 +42,42 @@
 }
 
 .list-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 
-    0 10px 20px -10px rgba(0, 0, 0, 0.1),
-    0 4px 8px -4px rgba(0, 0, 0, 0.06);
+  border-color: var(--primary);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.10);
+  transform: translateY(-4px) scale(1.02);
 }
 
 .list-card:hover::before {
   opacity: 1;
 }
 
+
+/* === Add New Card Variant === */
+.list-card.add-new-card {
+  border: 1px dashed var(--border);
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.list-card.add-new-card:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 8px 20px rgba(var(--primary, 52, 120, 246), 0.18);
+  transform: translateY(-5px);
+}
+
+.add-new-card .list-card-title {
+  color: white;
+  text-align: center;
+}
+
+
+/* === Card Inner Elements === */
 .list-card-icon {
   width: 52px;
   height: 52px;
@@ -71,6 +103,8 @@
   letter-spacing: -0.01em;
 }
 
+
+/* === Progress Bar === */
 .list-card-progress {
   display: flex;
   align-items: center;
@@ -99,40 +133,21 @@
   white-space: nowrap;
 }
 
-.no-lists-message {
-  text-align: center;
-  margin-top: var(--spacing-xl);
-  color: var(--text-medium);
-  font-size: 1.1em;
-}
 
-.list-card.add-new-card {
-  border: 1px dashed var(--border);
-  background-color: var(--primary);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.list-card.add-new-card:hover {
-  background-color: var(--primary-dark);
-  box-shadow: 0 8px 20px rgba(var(--primary, 52, 120, 246), 0.18);
-  transform: translateY(-5px);
-}
-
+/* === Add New Icon === */
 .add-new-icon-placeholder {
-    width: 50px;
-    height: 50px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: var(--spacing-sm);
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  font-size: 2em;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.10);
+  border: 1.5px solid var(--border);
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .add-new-icon {
@@ -141,13 +156,17 @@
   line-height: 0.5;
 }
 
-.add-new-card .list-card-title {
-  color: white;
+
+/* === Empty State === */
+.no-lists-message {
   text-align: center;
+  margin-top: var(--spacing-xl);
+  color: var(--text-medium);
+  font-size: 1.1em;
 }
 
-/* --- Media Queries for larger screens (still present unless explicitly reverted) --- */
 
+/* === Media Queries === */
 @media screen and (min-width: 768px) {
   .list-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -165,4 +184,11 @@
   .list-grid {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
+}
+
+
+/* === Dark Mode Support === */
+:root.dark-mode .list-card-icon-placeholder {
+  background-color: var(--surface-alt);
+  border-color: var(--primary-light);
 }

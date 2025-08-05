@@ -1,0 +1,110 @@
+===========================
+PROJECT FILE STRUCTURE OVERVIEW
+===========================
+
+───────────────────────────
+📁 Top-Level Files
+───────────────────────────
+• App.tsx
+  → Main React component. Handles routing between dashboard, list detail, and section detail views.
+    Manages modal state and dark mode.
+
+• App.css
+  → Styles for the main app layout, header, cards, buttons, and dark mode.
+
+• index.css
+  → Imports global and variable CSS for the app.
+
+• main.tsx
+  → Entry point. Renders the React app and sets up React Query provider.
+
+• vite-env.d.ts
+  → TypeScript types for Vite environment.
+
+───────────────────────────
+📁 API
+───────────────────────────
+• api/todos.ts
+  → Contains all API functions for CRUD operations on todos and todo lists using Axios.
+
+───────────────────────────
+📁 Components
+───────────────────────────
+
+  📂 Common
+  ────────────────
+  • components/common/Modal.tsx
+    → Reusable modal dialog component.
+
+  • components/common/Modal.css
+    → Styles for the modal dialog.
+
+  • components/common/DarkModeToggle.tsx
+    → Toggle switch for dark mode.
+
+  • components/common/DarkModeToggle.css
+    → Styles for the dark mode toggle.
+
+  📂 Lists
+  ────────────────
+  • components/lists/ListDashboard.tsx
+    → Dashboard showing all todo lists/categories.
+
+  • components/lists/ListDashboard.css
+    → Styles for the dashboard and list cards.
+
+  • components/lists/AddListForm.tsx
+    → Form to add a new todo list/category.
+
+  • components/lists/AddListForm.css
+    → Styles for the add list form.
+
+  • components/lists/AddSubListForm.tsx
+    → Form to add a new section/sub-list to a list.
+
+  📂 Todos
+  ────────────────
+  • components/todos/TodoList.tsx
+    → Shows todos for a selected list, grouped by section.
+
+  • components/todos/TodoList.css
+    → Styles for the todo list view.
+
+  • components/todos/SectionDetailView.tsx
+    → Shows all todos in a specific section.
+
+  • components/todos/SectionDetailView.css
+    → Styles for the section detail view.
+
+  • components/todos/AddTodo.tsx
+    → Form to add a new todo item.
+
+  • components/todos/AddTodo.css
+    → Styles for the add todo form.
+
+  • components/todos/QuickAddTodo.tsx
+    → Simple input for quickly adding a todo (not currently used in main app).
+
+  • components/todos/QuickAddTodo.css
+    → Styles for the quick add todo form.
+
+───────────────────────────
+📁 Hooks
+───────────────────────────
+• hooks/useTodos.ts
+  → Custom React hook for fetching, adding, updating, and deleting todos using React Query.
+
+───────────────────────────
+📁 Styles
+───────────────────────────
+• styles/global.css
+  → Global CSS: resets, typography, button styles, checkbox styles, utility classes.
+
+• styles/variables.css
+  → CSS variables for colors, spacing, fonts, and dark mode.
+
+───────────────────────────
+📁 Types
+───────────────────────────
+• types/index.ts
+  → TypeScript interfaces for ToDo and TodoListCategory.

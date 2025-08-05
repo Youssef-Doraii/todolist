@@ -10,7 +10,7 @@
     {
       "id": "15",
       "title": "Drink 2L water",
-      "completed": true,
+      "completed": false,
       "listId": 1,
       "section": "Daily Routine"
     },
