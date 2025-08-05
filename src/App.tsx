@@ -29,8 +29,6 @@ function App() {
     document.documentElement.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
 
-  const toggleDarkMode = () => setIsDarkMode((d) => !d);
-
   // Navigation handlers
   const handleSelectList = (id: number, name: string) => {
     setSelectedListId(id);
@@ -136,7 +134,6 @@ function App() {
           onListCreated={handleListCreated}
         />
       </Modal>
-      {/* Add Sub List Modal */}
       <Modal open={showAddSubList} onClose={() => setShowAddSubList(false)}>
         {selectedListId && (
           <AddSubListForm

@@ -56,7 +56,6 @@ export function ListDashboard({
               onClick={() => onSelectList(Number(list.id), list.name)}
             >
               <div className="list-card-icon-placeholder">
-                {/* You can use a dynamic icon here if you want */}
                 <span role="img" aria-label="icon">
                   📋
                 </span>

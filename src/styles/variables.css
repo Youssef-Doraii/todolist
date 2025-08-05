@@ -9,7 +9,7 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 2rem;
   
-  /* Colors - Enhanced for better contrast */
+  /* Colors */
   --primary: #6366f1;
   --primary-dark: #4f46e5;
   --primary-light: #818cf8;
@@ -19,7 +19,7 @@
   --card-background: #ffffff;
   --surface-alt: #f1f5f9;
   
-  /* Text colors with better contrast */
+  /* Text colors */
   --text-dark: #0f172a;
   --text-medium: #475569;
   --text-light: #64748b;
@@ -53,7 +53,7 @@
     0 4px 6px -4px rgba(0, 0, 0, 0.05);
 }
 
-/* Dark mode - Enhanced contrast */
+/* Dark mode */
 :root.dark-mode {
   --background: #0f172a;
   --card-background: #1e293b;

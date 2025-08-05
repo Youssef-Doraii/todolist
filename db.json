@@ -269,14 +269,14 @@
     {
       "id": "47",
       "title": "Update homepage banner",
-      "completed": false,
+      "completed": true,
       "listId": 5,
       "section": "Website Redesign"
     },
     {
       "id": "48",
       "title": "Fix mobile menu bug",
-      "completed": true,
+      "completed": false,
       "listId": 5,
       "section": "Website Redesign"
     },

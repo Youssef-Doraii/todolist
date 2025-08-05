@@ -20,9 +20,15 @@ export function SectionDetailView({
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {error?.message}</p>;
 
-  const sectionTodos = (todos || []).filter(
-    (todo) => (todo.section || "Uncategorized") === sectionName
-  );
+  // Filter todos for this section and sort (completed at bottom)
+  const sectionTodos = (todos || [])
+    .filter((todo) => (todo.section || "Uncategorized") === sectionName)
+    .sort((a, b) => {
+      if (a.completed && !b.completed) return 1;
+      if (!a.completed && b.completed) return -1;
+      return 0;
+    });
+
   const completedCount = sectionTodos.filter((t) => t.completed).length;
 
   return (
@@ -42,7 +48,10 @@ export function SectionDetailView({
       </div>
       <ul className="section-todo-list">
         {sectionTodos.map((todo) => (
-          <li className="todo-item" key={todo.id}>
+          <li
+            className={`todo-item ${todo.completed ? "completed" : ""}`}
+            key={todo.id}
+          >
             <span>
               <input
                 type="checkbox"

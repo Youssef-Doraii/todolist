@@ -36,6 +36,14 @@ export function TodoList({
 
   const sortedSections = Object.keys(groupedTodos).sort();
 
+  const sortTodos = (todos: any[]) => {
+    return [...todos].sort((a, b) => {
+      if (a.completed && !b.completed) return 1;
+      if (!a.completed && b.completed) return -1;
+      return 0;
+    });
+  };
+
   return (
     <div>
       <div className="list-detail-top-row">
@@ -71,7 +79,10 @@ export function TodoList({
           const completedCount = groupedTodos[section].filter(
             (t) => t.completed
           ).length;
-          const todosToShow = sectionTodos.slice(0, 3);
+
+          // Sort todos with completed at bottom
+          const sortedTodos = sortTodos(sectionTodos);
+          const todosToShow = sortedTodos.slice(0, 3);
 
           return (
             <div className="todo-section-card" key={section}>
@@ -83,7 +94,10 @@ export function TodoList({
               </div>
               <ul className="todo-items-list">
                 {todosToShow.map((todo) => (
-                  <li className="todo-item" key={todo.id}>
+                  <li
+                    className={`todo-item ${todo.completed ? "completed" : ""}`}
+                    key={todo.id}
+                  >
                     <span>
                       <input
                         type="checkbox"
